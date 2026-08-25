@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://secure-rag-ld2b.onrender.com";
 
 export default function App() {
   const [messages, setMessages] = useState([]);
