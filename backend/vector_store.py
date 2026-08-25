@@ -7,9 +7,8 @@ from chromadb.utils import embedding_functions
 
 client = chromadb.PersistentClient(path="./chroma_data")
 
-embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="all-MiniLM-L6-v2"
-)
+# Lightweight ONNX-based embedder (no torch/CUDA) — fits free-tier memory limits
+embedding_fn = embedding_functions.ONNXMiniLM_L6_V2()
 
 collection = client.get_or_create_collection(
     name="documents",
